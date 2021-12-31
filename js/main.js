@@ -1,8 +1,7 @@
 const cards = $(".nextDays .container .card");
 
 // taking the information from api
-const file = `https://api.openweathermap.org/data/
-2.5/onecall?lat=36.216667&lon=37.166668&units=metric&exclude=minutely,alerts&appid=b6b4ad741fb41cf95c985aac014dca50`;
+const file = `https://api.openweathermap.org/data/2.5/onecall?lat=36.216667&lon=37.166668&units=metric&exclude=minutely,alerts&appid=b6b4ad741fb41cf95c985aac014dca50`;
 
 fetch(file).then((response) => response.json())
 .then((data) => {
