@@ -1,0 +1,87 @@
+$main-color: #102027 ;
+$sub-color: #4dd0e1;
+$shadow: black;
+$tranparent: rgb(0 , 0 , 0 , .1);
+$secondary: #6c757d;
+$dark: #343a40;
+$light: #f8f9fa;
+$sub:#6610f2;
+* {box-sizing: border-box;}
+html {background-color: $secondary;}
+// عاصف مشمس مثلج ضبابي غائم ماطر
+// Umbrella Sunglasses Flashlight thermometer winter hat
+a {
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+nav {
+    background-color: rgb(0 ,0 ,0 , .1);
+    box-shadow: 0px 0px 5px 0px #000;
+}
+body {
+    background:url("../img/clear.gif") no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+.thisDay > div > div > div{
+    box-shadow: 0px 0px 5px 0px black;
+}
+.nextDays {
+    position: relative;
+    .container {
+        position: relative;
+        align-items: center;
+        height: 100%;
+        overflow: hidden;
+    }
+    .card {
+        user-select: none;
+        position: absolute;
+        background:url("../img/rain.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: solid 3px $dark;
+        min-width: 150px;
+    }
+    .card:not(.active){opacity: .5;}
+    .card.active {
+        transform: scale((1.1));
+        transition: transform .3s;
+    }
+    .arrow {
+        z-index: 3;
+        position: absolute;
+        left: 50%;
+        transform: translatex(-50%);
+        top: 10%;
+        user-select: none;
+        i {
+            user-select: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px){
+    .col-xsm-12 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
