@@ -20,14 +20,40 @@ nav {
 }
 
 body {
-  background: url("../img/clear.gif") no-repeat;
+  background: url("../img/rain.gif") no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
 }
 
-.thisDay > div > div > div {
+/*
+@media (min-width:576px)@media (min-width:768px)
+@media (min-width:992px)@media (min-width:1200px)
+*/
+.thisDay .today {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.thisDay .today > div {
   box-shadow: 0px 0px 5px 0px black;
+  padding: 10px;
+  flex-basis: 22%;
+}
+@media (max-width: 1199px) {
+  .thisDay .today > div {
+    margin-bottom: 1rem;
+    flex-basis: 40%;
+  }
+}
+@media (max-width: 450px) {
+  .thisDay .today {
+    justify-content: center;
+  }
+  .thisDay .today > div {
+    flex-basis: 95%;
+  }
 }
 
 .nextDays {
