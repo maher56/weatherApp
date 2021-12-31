@@ -12,7 +12,7 @@ fetch(file).then((response) => response.json())
     $(".todayTemp").text(data.current.temp + "ْ")
     $(".todayDisc").text(data.current.weather[0].main);
     $(".todayIcon").attr("src" , baseIconUrl + data.current.weather[0].icon + ".png");
-    $("body").css(`background-image` , `url("../img/${data.current.weather[0].main}.gif")`);
+    $("body").css(`background-image` , `url("img/${data.current.weather[0].main}.gif")`);
     for(let i = 0 ; i < 5 ; i++) {
         let current = $(".main-content .container > div > div");
         current.eq(i).children().eq(1)
@@ -30,7 +30,7 @@ fetch(file).then((response) => response.json())
     for(let i = 0 , j = children.length ; i < j ; i++) {
         children.eq(i).children().eq(0).children().eq(0).text((now.getDate() - 1 + i) % 30 + 1);
         children.eq(i).children().eq(0).children().eq(1).text(data.daily[i].temp.day + "ْ");
-        children.eq(i).css(`background-image` , `url("../img/${data.daily[i].weather[0].main}.gif")`);
+        children.eq(i).css(`background-image` , `url("img/${data.daily[i].weather[0].main}.gif")`);
         children.eq(i).children().eq(0).children().eq(2).text(data.daily[i].weather[0].main);
         children.eq(i).children().eq(0).children().eq(3).attr("src" , baseIconUrl + data.daily[i].weather[0].icon + ".png")
     }
