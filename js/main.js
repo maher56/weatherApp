@@ -23,12 +23,12 @@ fetch(file).then((response) => response.json())
         if(i == 0)continue;
         let hour = (now.getHours() + i) % 24;
         if(hour <= 9)hour = "0" + hour;
-        current.eq(i).children().eq(0).text(hour);
+        current.eq(i).children().eq(0).text("after " + hour + " Hour");
     }
 
     let children = $(".nextDays .container").children();
     for(let i = 0 , j = children.length ; i < j ; i++) {
-        children.eq(i).children().eq(0).children().eq(0).text((now.getDate() - 1 + i) % 30 + 1);
+        children.eq(i).children().eq(0).children().eq(0).html("after " + ((now.getDate() - 1 + i) % 30 + 1) + "<br>Day");
         children.eq(i).children().eq(0).children().eq(1).text(data.daily[i].temp.day + "ْ");
         children.eq(i).css(`background-image` , `url("img/${data.daily[i].weather[0].main}.gif")`);
         children.eq(i).children().eq(0).children().eq(2).text(data.daily[i].weather[0].main);
